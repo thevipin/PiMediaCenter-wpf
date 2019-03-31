@@ -27,6 +27,7 @@ namespace PiMediaCenter.userInterface
         {
             InitializeComponent();
             Navigator = new KeyStrokes();
+            grid2.Visibility = Visibility.Collapsed;
         }
 
         private void btnUp_Click(object sender, RoutedEventArgs e)
@@ -59,9 +60,13 @@ namespace PiMediaCenter.userInterface
         }
         private void btnInfoSent_Click(object sender, RoutedEventArgs e)
         {
-            
+            grid2.Visibility = Visibility.Visible;
         }
 
-        
+        private void btnInfoSent_copy_Click(object sender, RoutedEventArgs e)
+        {
+            grid2.Visibility = Visibility.Collapsed;
+            Navigator.Text(textBox.Text);
+        }
     }
 }

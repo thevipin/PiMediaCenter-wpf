@@ -52,6 +52,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,22 +63,46 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Casting\VLC.cs" />
     <Compile Include="Network\MainClient.cs" />
     <Compile Include="Network\KeyStrokes.cs" />
     <Compile Include="Network\PlayerRemoteController.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SharedPreferance.cs" />
+    <Compile Include="test\Casting.xaml.cs">
+      <DependentUpon>Casting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userInterface\NavigationControl.xaml.cs">
       <DependentUpon>NavigationControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userInterface\PlayerController.xaml.cs">
+      <DependentUpon>PlayerController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userInterface\PlayListElementPage.xaml.cs">
+      <DependentUpon>PlayListElementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userInterface\RemoterPlayerPage.xaml.cs">
+      <DependentUpon>RemoterPlayerPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="test\Casting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="test\network.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,17 +134,24 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="userInterface\PlayerController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userInterface\PlayListElementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userInterface\RemoterPlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Network\Comm\Client.cs" />
     <Compile Include="Network\Comm\DataCodex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -149,6 +182,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Streamline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Arrow_Left.png" />
+    <Resource Include="img\Arrow_Left_Sec.png" />
+    <Resource Include="img\Arrow_Right.png" />
+    <Resource Include="img\Arrow_Right_Sec.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

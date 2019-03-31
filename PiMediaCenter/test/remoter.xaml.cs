@@ -19,40 +19,15 @@ namespace PiMediaCenter.test
     /// Interaction logic for remoter.xaml
     /// </summary>
     public partial class remoter : Window
-    {
-        PiMediaCenter.Network.PlayerRemoteController Remoter;
+    {        
         public remoter()
         {
-            InitializeComponent();
-            Remoter = new Network.PlayerRemoteController();
+            InitializeComponent();           
         }
 
-        private void btn_play_Click(object sender, RoutedEventArgs e)
+        private void NavigationControl_Loaded(object sender, RoutedEventArgs e)
         {
-            DataCodex code = new DataCodex("!");
-            code.put("src", txt_src.Text);
-            code.put("name", "testFile");
-            Remoter.Play(code);
-        }
 
-        private void btn_pause_Click(object sender, RoutedEventArgs e)
-        {
-            Remoter.Pause();
-        }
-
-        private void btn_stop_Click(object sender, RoutedEventArgs e)
-        {
-            Remoter.Stop();
-        }
-
-        private void btn_resume_Click(object sender, RoutedEventArgs e)
-        {
-            Remoter.Resume();
-        }
-
-        private void btn_volumeup_Click(object sender, RoutedEventArgs e)
-        {
-            //Remoter.v
         }
     }
 }

@@ -8,20 +8,7 @@
         mc:Ignorable="d"
         Title="remoter" Height="327.068" Width="694.432">
     <Grid Margin="0,0,21,0">
-        <TextBox x:Name="txt_src" HorizontalAlignment="Left" Height="23" Margin="10,83,0,0" TextWrapping="Wrap" Text="video.mkv" VerticalAlignment="Top" Width="198"/>
-        <Button x:Name="btn_play" Content="Play" HorizontalAlignment="Left" Margin="229,84,0,0" VerticalAlignment="Top" Width="86" Height="22" Click="btn_play_Click"/>
-        <Button x:Name="btn_stop" Content="stop" HorizontalAlignment="Left" Margin="117,132,0,0" VerticalAlignment="Top" Width="91"  Height="22" Click="btn_stop_Click"/>
-        <Button x:Name="btn_pause" Content="pause" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Width="86"  Height="22" Click="btn_pause_Click"/>
-        <Button x:Name="btn_resume" Content="resume" HorizontalAlignment="Left" Margin="229,132,0,0" VerticalAlignment="Top" Width="86"  Height="22" Click="btn_resume_Click"/>
-        <Button x:Name="btn_volumeup" Content="volumeup" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="86"  Height="22" Click="btn_volumeup_Click"/>
-        <Button x:Name="btn_volumedown" Content="volumedown" HorizontalAlignment="Left" Margin="117,170,0,0" VerticalAlignment="Top" Width="91"  Height="22"/>
-        <Button x:Name="btn_DecreaseSpeed" Content="DecreaseSpeed" HorizontalAlignment="Left" Margin="229,170,0,0" VerticalAlignment="Top" Width="86"  Height="22"/>
-        <Button x:Name="btn_IncreaseSpeed" Content="IncreaseSpeed" HorizontalAlignment="Left" Margin="117,214,0,0" VerticalAlignment="Top" Width="91"  Height="22"/>
-        <Button x:Name="btn_Rewind" Content="Rewind" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Width="86"  Height="22"/>
-        <Button x:Name="btn_FastForward" Content="FastForward" HorizontalAlignment="Left" Margin="229,214,0,0" VerticalAlignment="Top" Width="86"  Height="22"/>
-        <Button x:Name="btn_ShowSubtitles" Content="ShowSubtitles" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" Width="86"  Height="22"/>
-        <Button x:Name="btn_HideSubtitles" Content="HideSubtitles" HorizontalAlignment="Left" Margin="117,251,0,0" VerticalAlignment="Top" Width="91"  Height="22"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="356,128,0,0" VerticalAlignment="Top" Width="121"/>
-        <userInterface:NavigationControl HorizontalAlignment="Left" Margin="463,60,0,0" VerticalAlignment="Top" Height="213" Width="202"/>
+        <userInterface:NavigationControl HorizontalAlignment="Left" Margin="24,57,0,0" VerticalAlignment="Top" Height="213" Width="202"/>
+        <userInterface:PlayerController HorizontalAlignment="Left" Margin="303,1,0,0" VerticalAlignment="Top" Height="295" Width="331"/>
     </Grid>
 </Window>

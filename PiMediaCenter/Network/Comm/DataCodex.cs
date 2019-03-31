@@ -61,8 +61,9 @@ namespace PiMediaCenter.Network.Comm
         }
         public void putCodex(string code)
         {
-            dataKey.Clear(); ;
+            dataKey.Clear();
             dataValue.Clear();
+            this.codex = code;
             Decode();
         }
         public List<string> Keys()
@@ -85,12 +86,20 @@ namespace PiMediaCenter.Network.Comm
         {
             string code = codex;
             int fromIndex = 0;
-            Identifier = code.Substring(fromIndex = code.IndexOf("#", fromIndex) + 1, fromIndex = code.IndexOf("{", fromIndex));
+            Identifier = code.Substring(fromIndex = code.IndexOf("#", fromIndex) + 1, (fromIndex = code.IndexOf(":", fromIndex)- fromIndex));
             int lastIndex = code.LastIndexOf(";");
-            while (fromIndex > lastIndex)
+            while (fromIndex < lastIndex)
             {
-                dataKey.Add(code.Substring(fromIndex = code.IndexOf("&", fromIndex) + 1, fromIndex = code.IndexOf("=", fromIndex)));
-                dataValue.Add(code.Substring(fromIndex + 1, fromIndex = code.IndexOf(";", fromIndex)));
+                
+                int tfromIndex = (fromIndex= code.IndexOf("&", fromIndex) + 1);
+                int toIndex = ((fromIndex = code.IndexOf("=", fromIndex)));
+                string Key = code.Substring(tfromIndex, toIndex - tfromIndex);
+                dataKey.Add(Key);
+
+                tfromIndex = (fromIndex + 1);
+                toIndex = (fromIndex = code.IndexOf(";", fromIndex));
+                string value = code.Substring(tfromIndex, toIndex - tfromIndex);
+                dataValue.Add(value);
             }
         }
 

@@ -23,6 +23,18 @@ namespace PiMediaCenter
         public MainWindow()
         {
             InitializeComponent();
+            gridContiner.Children.Add(new PiMediaCenter.userInterface.RemoterPlayerPage());
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            PiMediaCenter.Network.MainClient.Kill();
+        }
+
+        private void btnMenuRemote_Click(object sender, RoutedEventArgs e)
+        {
+            gridContiner.Children.Clear();
+            gridContiner.Children.Add(new PiMediaCenter.userInterface.RemoterPlayerPage());            
         }
     }
 }

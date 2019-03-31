@@ -35,10 +35,15 @@ namespace PiMediaCenter.Network
             ListIdentifier.Add(identfier);
             ListDataReciever.Add(dataRecievered);
         }
+        public static void Kill()
+        {            
+            client.DisconnectAll();
+        }
         ~MainClient()
         {
             ListIdentifier.Remove(identfier);
             ListDataReciever.Remove(dataRecievered);
+            client.DisconnectAll();
         }
         public void sentData(DataCodex code)
         {

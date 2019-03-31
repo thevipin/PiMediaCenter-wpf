@@ -4,29 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PiMediaCenter.userInterface"
-             mc:Ignorable="d" Width="201.879" Height="213.159">
-    <Grid RenderTransformOrigin="0.455,0.53" Margin="10">
-        <Button x:Name="btnEnter" Content="" HorizontalAlignment="Center" Margin="29,31,39,47" VerticalAlignment="Center" Width="45" Height="45" RenderTransformOrigin="0.5,0.5" Click="btnEnter_Click" >
+             mc:Ignorable="d" Width="201.879" Height="266.85">
+    <Grid Margin="10,10,10,46">
+        <Button x:Name="btnUp" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,95" RenderTransformOrigin="0.5,0.5" Width="60"  Height="60" Click="btnUp_Click" BorderBrush="White">
             <Button.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform ScaleY="1" ScaleX="1"/>
-                    <SkewTransform AngleY="0" AngleX="0"/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button x:Name="btnUp" Content="" HorizontalAlignment="Left" Margin="66,13,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-0.4,0.128" Height="40" Click="btnUp_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="-44.396"/>
-                    <TranslateTransform X="1.323" Y="27.368"/>
                 </TransformGroup>
             </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle x:Name="r2"  Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+                        <Rectangle  Margin="0,10,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="r2" Property="Fill" Value="#FF055A93"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
-        <Button x:Name="btnDown" Content="" HorizontalAlignment="Left" Margin="66,126,0,0" VerticalAlignment="Top" Width="40" Height="40" RenderTransformOrigin="0.5,0.5" Click="btnDown_Click">
+        <Button x:Name="btnDown" Content="" HorizontalAlignment="Center" Margin="0,95,0,0" BorderBrush="White" VerticalAlignment="Center" Width="60" Height="60" RenderTransformOrigin="0.5,0.5" Click="btnDown_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -35,8 +36,21 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Margin="0">
+                        <Rectangle x:Name="r2"  Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+                        <Rectangle  Margin="10,0,0,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="r2" Property="Fill" Value="#FF055A93"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
-        <Button x:Name="btnLeft" Content="" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="40" Height="40" RenderTransformOrigin="0.5,0.5" Click="btnLeft_Click">
+        <Button x:Name="btnLeft" Content="" HorizontalAlignment="Center" Margin="0,0,95,0" BorderBrush="White"  VerticalAlignment="Center" Width="60" Height="60" RenderTransformOrigin="0.5,0.5" Click="btnLeft_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -44,9 +58,23 @@
                     <RotateTransform Angle="-44.187"/>
                     <TranslateTransform/>
                 </TransformGroup>
+
             </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Margin="0">
+                        <Rectangle x:Name="r2"  Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+                        <Rectangle  Margin="10,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="r2" Property="Fill" Value="#FF055A93"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
-        <Button x:Name="btnRight" Content="" HorizontalAlignment="Left" Margin="123,69,0,0" VerticalAlignment="Top" Width="40" Height="40" RenderTransformOrigin="0.5,0.5" Click="btnRight_Click">
+        <Button x:Name="btnRight" Content="" HorizontalAlignment="Center" Margin="95,0,0,0" BorderBrush="White" VerticalAlignment="Center" Width="60" Height="60" RenderTransformOrigin="0.5,0.5" Click="btnRight_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -55,27 +83,99 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Button.RenderTransform>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Margin="0">
+                        <Rectangle x:Name="r2"  Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+                        <Rectangle  Margin="0,0,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="r2" Property="Fill" Value="#FF055A93"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
-        <Button x:Name="btnSubEnter" Content="" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="40" Height="40" RenderTransformOrigin="0.5,0.5" Click="btnSubEnter_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.44"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
+        <Button x:Name="btnSubEnter" Content="" HorizontalAlignment="Left" Margin="0,146,0,0" VerticalAlignment="Top" Width="40" Height="40" RenderTransformOrigin="0.5,0.5" Click="btnSubEnter_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle x:Name="r3" Fill="#FF404042"/>
+                        <Rectangle x:Name="r4" Width="30" Height="30" Fill="White"/>
+                        <TextBlock x:Name="r5" Text="i" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF404042" FontWeight="Heavy"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="r3" Property="Fill" Value="#FF055A93"></Setter>
+                            <Setter TargetName="r5" Property="Foreground" Value="#FF055A93"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
-        <Button x:Name="btnInfoSent" Content="" HorizontalAlignment="Left" Margin="123,146,0,0" VerticalAlignment="Top" Width="40" Height="40" RenderTransformOrigin="0.5,0.5" Click="btnInfoSent_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.605"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
+        <Button x:Name="btnInfoSent" Content="" Margin="142,146,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.5,0.5" Click="btnInfoSent_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle x:Name="r3" Fill="#FF404042"/>
+                        <Rectangle x:Name="r4" Width="30" Height="30" Fill="White"/>
+                        <TextBlock x:Name="r5" Text="T" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF404042" FontWeight="Heavy"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="r3" Property="Fill" Value="#FF055A93"></Setter>
+                            <Setter TargetName="r5" Property="Foreground" Value="#FF055A93"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
+        <Button x:Name="btnEnter" Content="" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="50" Height="50" RenderTransformOrigin="0.5,0.5" Click="btnEnter_Click" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Margin="0">
+                        <Rectangle x:Name="r1"  Margin="0,0,26,26" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+                        <Rectangle x:Name="r2"  Margin="26,0,0,26" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+                        <Rectangle x:Name="r3"  Margin="0,26,26,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+                        <Rectangle x:Name="r4"  Margin="26,26,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF404042"/>
+
+                        <Rectangle Margin="5,5,28,28" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                        <Rectangle Margin="28,5,5,28" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                        <Rectangle Margin="5,28,28,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                        <Rectangle Margin="28,28,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="r1" Property="Fill" Value="#FF055A93"/>
+                            <Setter TargetName="r2" Property="Fill" Value="#FF055A93"/>
+                            <Setter TargetName="r3" Property="Fill" Value="#FF055A93"/>
+                            <Setter TargetName="r4" Property="Fill" Value="#FF055A93"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Grid x:Name="grid2" HorizontalAlignment="Left" Height="40" Margin="0,214,0,-47" VerticalAlignment="Top" Width="182">
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="142" Margin="0,0,0,3"/>
+            <Button x:Name="btnInfoSent_copy" Content="" HorizontalAlignment="Left" Margin="142,4,0,3" Width="40" RenderTransformOrigin="0.5,0.5" Click="btnInfoSent_copy_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="r3" Fill="#FF404042"/>
+                            <Rectangle x:Name="r4" Width="30" Height="30" Fill="White"/>
+                            <TextBlock x:Name="r5" Text=">" FontSize="29" Margin="0,0,0,5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF404042" FontWeight="Heavy"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="r3" Property="Fill" Value="#FF055A93"/>
+                                <Setter TargetName="r5" Property="Foreground" Value="#FF055A93"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
 
     </Grid>
 </UserControl>

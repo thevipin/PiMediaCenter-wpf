@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PiMediaCenter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Pi Media Center" Height="550.921" Width="823.684" Closed="Window_Closed" MinWidth="720" MinHeight="500" Icon="/PiMediaCenter;component/img/Streamline.png">
     <Grid>
-        
+        <Grid>
+            <DockPanel  LastChildFill="False" VerticalAlignment="Top" HorizontalAlignment="Stretch" DockPanel.Dock="Top" Height="50" Background="#FFDDDDDD">
+                <Button x:Name="btnMenuOptions" Content="       Menu Options"  VerticalAlignment="Top" Height="50" Width="50" BorderBrush="#FFDDDDDD" BorderThickness="7" FontSize="22">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid >
+                                <Image Source="/PiMediaCenter;component/img/menu.png" Stretch="Uniform" Margin="7"/>
+                            </Grid>
+                            
+                        </ControlTemplate>
+                    </Button.Template>                    
+                </Button>
+                <Label x:Name="labelMenuName" Content="Remoter" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="16" FontWeight="Bold"/>
+            </DockPanel>
+            <DockPanel VerticalAlignment="Stretch" Width="50"  LastChildFill="False" HorizontalAlignment="Left" Background="#FFDDDDDD" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50,0,0">
+                <Button x:Name="btnMenuRemote" Margin="0,10,0,0" VerticalAlignment="Top" Height="50" BorderBrush="#FFDDDDDD" BorderThickness="7" FontSize="18" Click="btnMenuRemote_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid >
+                                <Rectangle x:Name="btn1Rect" Width="5" Fill="Gray" HorizontalAlignment="Left"/>
+                                <Image Stretch="Uniform" Margin="5,5,5,5" Source="/PiMediaCenter;component/img/Streamline.png"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="btn1Rect" Property="Fill" Value="#FF2C8ED1"/>
+                                </Trigger>
+                                
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </DockPanel>
+
+            <Grid x:Name="gridContiner" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="50,50,0,0" DockPanel.Dock="Left">
+                <!--<Frame x:Name="frameContiner" Content="" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />-->
+            </Grid>
+
+
+        </Grid>
     </Grid>
 </Window>
